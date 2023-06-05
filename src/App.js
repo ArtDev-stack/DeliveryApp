@@ -1,25 +1,49 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
+import { useState } from 'react'
+import Tab from './Components/TabsComponent/Tab';
+import TabContent from './Components/TabsComponent/TabContent';
+import Shop from './Components/Shop/Shop';
+import Cart from './Components/Cart/Cart';
 import './App.css';
 
 function App() {
+  const [activeTab, setActiveTab] = useState(1);
+
+  const handleTabClick = (tabNumber) => {
+    setActiveTab(tabNumber);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <div className="App">
+        <div className="tabs-container">
+          <div className="tabs">
+            <Link to="/Shop">
+              <Tab
+                label="Shop"
+                isActive={activeTab === 1}
+                onClick={() => handleTabClick(1)}
+              />
+            </Link>
+            <div className='line'></div>
+            <Link to="/ShoppingCart">
+              <Tab
+                label="Shopping Cart"
+                isActive={activeTab === 2}
+                onClick={() => handleTabClick(2)}
+              />
+            </Link>
+
+          </div>
+          <div className="tab-contents">
+            {activeTab === 1 && <TabContent children={<Shop />} />}
+            {activeTab === 2 && <TabContent children={<Cart />} />}
+          </div>
+        </div>
+
+      </div>
+    </Router>
+  )
 }
 
 export default App;

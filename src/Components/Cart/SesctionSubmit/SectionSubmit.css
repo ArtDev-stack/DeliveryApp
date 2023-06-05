@@ -1,0 +1,22 @@
+.section-submit {
+   display: flex;
+   justify-content: right;
+   align-items: center;
+   
+   margin: 50px 55px 0px 0px;
+   padding: 10px 0px;
+}
+
+.section-submit-btn {
+   margin-left: 180px;
+   padding: 15px 100px;
+   font-size: 22px;
+   background: none;
+   border: 1px solid black;
+   border-radius: 15px;
+   cursor: pointer;
+}
+
+.section-submit-btn:hover {
+   background: rgb(110, 236, 131);
+}

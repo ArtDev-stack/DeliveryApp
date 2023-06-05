@@ -1,0 +1,6 @@
+.supplies-section {
+   display: flex;
+   flex-wrap: wrap;
+   height: 73vh;
+   overflow: auto;
+}

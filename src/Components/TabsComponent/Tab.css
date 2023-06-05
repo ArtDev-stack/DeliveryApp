@@ -1,0 +1,13 @@
+.tab {
+   background: rgb(26, 152, 236);
+   padding: 10px 33px;
+   border: none;
+   color: #ffffff;
+   font-size: 22px;
+   cursor: pointer;
+   margin-left: 50px;
+}
+
+.active {
+   background: rgb(162, 204, 233);
+}

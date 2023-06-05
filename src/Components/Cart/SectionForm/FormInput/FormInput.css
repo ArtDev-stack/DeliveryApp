@@ -1,0 +1,8 @@
+.section-input {
+   display: flex;
+   flex-direction: column;
+}
+
+.section-input:not(:first-child) {
+   margin-top: 40px;
+}
